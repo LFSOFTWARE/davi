@@ -1,0 +1,76 @@
+<div>
+    <form method="POST" action="/adm/Adicionar" enctype="multipart/form-data" class="row g-3 mt-5"
+        multiple>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome" placeholder="Nome do produto.."
+                id="inputEmail4">
+        </div>
+        <div class="col-md-2">
+            <label for="inputPassword4" class="form-label">Preço</label>
+            <input type="number" class="form-control" name="price" placeholder="EX: 10.19"
+                id="inputPassword4">
+        </div>
+        <div class="col-md-2">
+            <label for="inputPassword4" class="form-label">Peso</label>
+            <input type="number" class="form-control" name="peso" placeholder=""
+                id="inputPassword4">
+        </div>
+        <div class="col-md-4">
+            <label for="inputAddress" class="form-label">Material</label>
+            <input type="text" class="form-control" id="inputAddress" name="material"
+                placeholder="Ex: Aço">
+        </div>
+        <div class="col-md-2">
+            <label for="inputPassword4" class="form-label">Estoque</label>
+            <input type="number" class="form-control" name="estoque" id="inputPassword4">
+        </div>
+        <div class="col-md-2">
+            <label for="inputPassword4" class="form-label">Ponta 1 </label>
+            <input type="number" class="form-control" name="ponta1" id="inputPassword4">
+        </div>
+        <div class="col-md-2">
+            <label for="inputPassword4" class="form-label">Ponta 2</label>
+            <input type="number" class="form-control" name="ponta2" id="inputPassword4">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputZip" class="form-label">Comprimento</label>
+            <input type="number" class="form-control" name="comprimento" id="inputZip">
+        </div>
+
+
+        <div class="col-md-10">
+
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea cols="10" rows="10" class="form-control" name="desc"
+                id="exampleFormControlTextarea1" rows="3"> </textarea>
+        </div>
+        <center>
+            <h4 class="mt-5">Imagens do Produto</h4>
+        </center>
+
+        <div class="col-md-10 mt-5">
+            <label class="btn btn-primary" for="file">Imagens </label>
+            <input class="inpuFIle"
+                onchange="document.getElementById('blah1').src = window.URL.createObjectURL(this.files[0]);document.getElementById('blah2').src = window.URL.createObjectURL(this.files[1]);document.getElementById('blah3').src = window.URL.createObjectURL(this.files[2])"
+                type="file" name="file" id="file" multiple>
+        </div>
+
+        <div class="col-md-10">
+            <img onclick="document.getElementById('blah1').src = '/img/branco.jpg'" class="mr-5"
+                id="blah1" alt="your image" width="150" height="150" src="/img/branco.jpg" />
+            <img onclick="document.getElementById('blah2').src = '/img/branco.jpg'" class="mr-5"
+                id="blah2" alt="your image" width="150" height="150" src="/img/branco.jpg" />
+            <img onclick="document.getElementById('blah3').src = '/img/branco.jpg'" class="mr-5"
+                id="blah3" alt="your image" width="150" height="150" src="/img/branco.jpg" />
+        </div>
+
+        <div class="col-12 mt-2 mb-5">
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </div>
+
+
+
+    </form>
+</div>

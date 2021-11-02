@@ -1,0 +1,38 @@
+<%- include("../partials/header.ejs") %>
+<link href="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.css" rel="stylesheet">
+
+    <body>
+        <%- include("../partials/admbar.ejs") %>
+            <div class="container">
+                <center class="mt-5">
+                    <h2>Adicionar Produto</h2>
+
+                </center>
+                <div class="mt-5">
+
+                    <h4><a href="/adm/">Painel Administrativo</a></h4>
+
+                    <hr>
+
+                    <a class="btn btn-primary" href="/adm/Adicionar">Castrar Item</a>
+                    <a class="btn btn-primary" href="/adm/pedidos">Pedidos</a>
+                    <a class="btn btn-primary" href="/adm/vendas">Vendas em aberto</a>
+                    <a class="btn btn-primary" href="/adm/vendasFinalizadas">Vendas Finalizadas</a>
+
+            <%- include('../partials/addPont.ejs') %>
+                
+                </div>
+
+            </div>
+            <%- include('../partials/footer.ejs') %>
+              
+
+    </body>
+    <%- include('../partials/scripts.ejs') %>
+
+
+        <script>
+            console.log("oi")
+        </script>
+
+        </html>

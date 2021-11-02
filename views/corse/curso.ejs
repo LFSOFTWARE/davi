@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+
+    <title>
+        Muri
+    </title>
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="/css/responsive.css" rel="stylesheet" />
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="hero_area">
+
+
+        <%- include('../partials/navbar.ejs') %>
+
+            <nav style="margin-top:2%" aria-label="breadcrumb ">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Cursos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ponteiros</li>
+                </ol>
+            </nav>
+            <hr>
+      
+            <div class="grid">
+                <h3>Curso - Terapias com ponteiros </h3>
+              
+                
+                <video style="border-top: 1px solid black;"  class="video mt-5" id="" controls autoplay>
+                    <source  id="play" src="/video/slinfatico.mkv" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Sistema respiratório
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-light movie" data-aula="slinfatico.mkv">
+                                        Aula #1</li>
+                                    <li class="list-group-item list-group-item-light movie" data-aula="video.mp4">Aula
+                                        #2</li>
+                                    <li class="list-group-item list-group-item-light " data-aula="slinfatico2.mkv">Aula
+                                        #3</li>
+                                    <li class="list-group-item list-group-item-light">Aula #4</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Sistema Linfático
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <li class="list-group-item list-group-item-light">Aula #1</li>
+                                <li class="list-group-item list-group-item-light">Aula #2</li>
+                                <li class="list-group-item list-group-item-light">Aula #3</li>
+                                <li class="list-group-item list-group-item-light">Aula #4</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Sistema Cardiovascular
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse plugin adds the appropriate classes that we use to style each element.
+                                These classes control the overall appearance, as well as the showing and hiding via CSS
+                                transitions. You can modify any of this with custom CSS or overriding our default
+                                variables. It's also worth noting that just about any HTML can go within the
+                                <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-5" >
+                <h3>Deixe seu comentario :)</h3>
+                <div class="form-floating mt-4">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Comentar</label>
+                  </div>
+                  <div class=" mt-3">
+                    <button type="submit" class="btn btn-primary">Comentar</button>
+                  </div>
+            </div>
+            <div style="margin-top: 15%;"></div>
+
+    </div>
+        <%- include('../partials/footer.ejs') %>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="/js/curso/videos.js"></script>
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+</body>
+<%- include("../partials/wpp.ejs") %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(".list-group-item").on("click", function (e) {
+            var video = $(this).attr("data-aula");
+            var play = document.getElementById("play");
+            var src = play.src.split("video");
+            var newSrc = src[0] + 'video/' + video
+
+            $('#play').attr('src', newSrc);
+            $(".video ")[0].load();
+        });
+    </script>
+</html>

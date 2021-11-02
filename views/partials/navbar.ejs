@@ -1,0 +1,83 @@
+ <!-- header section strats -->
+ <header class="header_section">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="/">
+        <span>
+          Muri
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Produtos">
+              Loja
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cursos">
+             Cursos
+            </a>
+          </li>
+         
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="https://api.whatsapp.com/send?phone=55119955575&text=Ol%C3%A1%20%2C%20Gostei%20desse%20produto">WhatsApp </a>
+          </li> -->
+        </ul>
+        <%if(user != null){%>
+        <div class="user_option">
+          <% if(user.status != '1'){%>
+          <a href="/#">
+            <i class="fa fa-user" aria-hidden="true"></i>
+      
+              <span style="border-bottom:1px solid black ;">
+              <%= user.nome%>
+              </span>
+           
+          </a>
+          <%}else{%>
+          <a href="/adm/">
+            <i class="fa fa-user" aria-hidden="true"></i>
+      
+              <span style="border-bottom:1px solid black ;">
+              <%= user.nome%>
+              </span>
+           
+          </a>
+          <%}%>
+          <a href="/checkOut">
+            <i class="fa fa-shopping-cart" aria-hidden="true" ></i><span id="icon_cart" > </span>
+          </a>
+          
+        </div>
+
+        <%}else{%>
+          <div class="user_option">
+            <a href="/login">
+              <i class="fa fa-user" aria-hidden="true"></i>
+        
+                <span>
+                  Login
+                </span>
+             
+            </a>
+            <a href="/checkOut">
+              <i class="fa fa-shopping-cart" aria-hidden="true" ></i><span id="icon_cart" > </span>
+            </a>
+            <form class="form-inline ">
+              <button class="btn nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        <%}%>
+        </div>
+    </nav>
+  </header>
+  <!-- end header section -->

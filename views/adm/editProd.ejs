@@ -1,0 +1,110 @@
+<%- include("../partials/header.ejs") %>
+
+    <body>
+        <%- include("../partials/admbar.ejs") %>
+            <div style="background-color: rgba(255, 255, 255, 0.589);" class="container">
+                <center class="mt-5">
+                    <h4>Edição de produto</h4>
+                    <hr>
+                    <div id="carouselExampleControls"   class="carousel slide w" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div  class="carousel-item active" >
+                            <div class="prod_img" id="prod_img">
+                              <img src="/img/<%= photos[0].img %> " alt="">
+                            </div> 
+                          </div>
+                        
+                          <%photos.forEach((e)=>{%>
+                            <div class="carousel-item">
+                              <div class="prod_img" id="prod_img">
+                                <img src="/img/<%= e.img %> " alt="">
+                              </div> 
+                            </div>
+                            <% })%>
+                         
+                        </div>
+                        <button style="padding: 0; margin: 0;  border: 0;background-color:white "  class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span  style=" background-image: url(/img/arrou2.png); " class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span  class="visually-hidden">Previous</span>
+                        </button>
+                        <button style="padding: 0; margin: 0;  border: 0;background-color:white "   class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span style=" background-image: url(/img/arrow-_.png); " class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div><hr>
+                      <div class="mt-5">
+                          <h2>Informações </h2>
+                      </div>
+                </center>
+                <div>
+                    <form method="POST" action="/adm/prod" enctype="multipart/form-data" multiple class="row g-3 mt-5">
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Nome</label>
+                            <input value="<%=produto.nome%>" type="text" name="nome" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputPassword4" class="form-label">Preço</label>
+                            <input value="<%=produto.price%>""  type="number" name="price" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputPassword4" class="form-label">Peso</label>
+                            <input value="<%=produto.peso%>"  type="number" name="peso" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputAddress" class="form-label">Material</label>
+                            <input value="<%=produto.material%>" type="text" name="material" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputPassword4" class="form-label">Estoque</label>
+                            <input value="<%=produto.estoque%>"  type="number" name="estoque" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputPassword4" class="form-label">Ponta 1 </label>
+                            <input value="<%=produto.ponta1%>"  type="number" name="ponta1" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputPassword4" class="form-label">Ponta 2</label>
+                            <input value="<%=produto.ponta2%>"  type="number" name="ponta2" class="form-control" id="inputPassword4">
+                        </div>
+                       
+                        <div class="col-md-6">
+                            <label for="inputZip" class="form-label">Peso</label>
+                            <input  value="<%=produto.peso%>"  type="number" name="peso2" class="form-control" id="inputZip">
+                        </div>
+                        
+                        <input type="hidden" value="<%= produto.id%>" name="id">
+                        
+                        <div class="col-md-10">
+                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                            <textarea  cols="10" rows="10" class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"><%=produto.desc%> </textarea>
+                          </div>
+                        
+                          
+                        <div class="col-md-10 mt-5">
+                            <label class="btn btn-primary" for="file">Imagens </label>
+                            <input class="inpuFIle"
+                                onchange="document.getElementById('blah1').src = window.URL.createObjectURL(this.files[0]);document.getElementById('blah2').src = window.URL.createObjectURL(this.files[1]);document.getElementById('blah3').src = window.URL.createObjectURL(this.files[2])"
+                                type="file" name="file" id="file" multiple>
+                        </div>
+                     
+                        <div class="col-md-10">
+                            <img class="mr-5" id="blah1" alt="your image" width="150" height="150"  src="/img/branco.jpg" />
+                            <img class="mr-5" id="blah2" alt="your image" width="150" height="150"  src="/img/branco.jpg" />
+                            <img class="mr-5" id="blah3" alt="your image" width="150" height="150"  src="/img/branco.jpg" />
+                        </div>
+                        <div class="col-12 mt-2 mb-5">
+                            <button type="submit" class="btn btn-success">Editar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+            <%- include('../partials/footer.ejs') %> 
+
+    </body>
+    <%- include('../partials/scripts.ejs') %> 
+
+
+    </html>

@@ -1,0 +1,161 @@
+<%- include("partials/header.ejs") %>
+
+  <body>
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/wpp.ejs") %>
+
+
+      <!doctype html>
+      <html lang="en">
+
+      <body class="bg-light">
+
+        <div class="container">
+          <div class="py-5 text-center">
+
+            <h2>Finalizando compra</h2>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Seu carrinho</span>
+                <span id="cart-info" class="badge badge-secondary badge-pill">0</span>
+              </h4>
+              <ul class="list-group mb-3" id="lista">
+               
+
+              </ul>
+
+              <form class="card p-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Promo code">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-secondary">Redeem</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8 order-md-1">
+              <h4 class="mb-3">Informações para entrega</h4>
+              <form class="needs-validation" method="POST" action="/pagamento" novalidate>
+                <input type="hidden" name="desc" id="desc">
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <label for="zip">CEP</label>
+                    <input type="text" class="form-control"  name="cep" id="zip" placeholder="" required>
+                    <div class="invalid-feedback">
+                      CEP É OBRIGATORIO!
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="zip">Numero</label>
+                    <input type="text" class="form-control" id="number" name="number" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Numero É OBRIGATORIO!
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="state">Estado</label>
+                    <select class="custom-select d-block w-100" id="state" required>
+                      <option value="">Estado...</option>
+                      <option value="AC">Acre</option>
+                      <option value="AL">Alagoas</option>
+                      <option value="AP">Amapá</option>
+                      <option value="AM">Amazonas</option>
+                      <option value="BA">Bahia</option>
+                      <option value="CE">Ceará</option>
+                      <option value="DF">Distrito Federal</option>
+                      <option value="ES">Espirito Santo</option>
+                      <option value="GO">Goiás</option>
+                      <option value="MA">Maranhão</option>
+                      <option value="MS">Mato Grosso do Sul</option>
+                      <option value="MT">Mato Grosso</option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="PA">Pará</option>
+                      <option value="PB">Paraíba</option>
+                      <option value="PR">Paraná</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="PI">Piauí</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="RN">Rio Grande do Norte</option>
+                      <option value="RS">Rio Grande do Sul</option>
+                      <option value="RO">Rondônia</option>
+                      <option value="RR">Roraima</option>
+                      <option value="SC">Santa Catarina</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="SE">Sergipe</option>
+                      <option value="TO">Tocantins</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please provide a valid state.
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="cow">
+                  <div class="mb-3">
+                    <label for="address2">Endereço <span class="text-muted"></span></label>
+                    <input type="text" class="form-control" id="address" placeholder="Endereço completo">
+                  </div>
+
+                </div>
+                <div class="cow">
+                  <div class="mb-3">
+                    <label for="address2">Cidade <span class="text-muted"></span></label>
+                    <input type="text" class="form-control" id="city" placeholder="Endereço completo">
+                  </div>
+
+                </div>
+              
+                  
+                <div id="form-adress">
+
+                </div>
+                  
+
+
+
+
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Ir para pagamento</button>
+              </form>
+            </div>
+          </div>
+
+          <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017-2018 Company Name</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Privacy</a></li>
+              <li class="list-inline-item"><a href="#">Terms</a></li>
+              <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+          </footer>
+        </div>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+
+
+
+      </body>
+
+      </html>
+
+  </body>
+
+  <script src="/js/bootstrap.js"></script>
+
+  </script>
+
+  <script src="/js/carrinho.js"></script>
+  <script src="/js/checkOut.js"></script>
+  <script src="/js/frete.js"></script>
+  </html>

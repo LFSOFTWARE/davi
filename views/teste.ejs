@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+
+<body>
+    <label for="input-res-1">File Gallery</label>
+    <div class="file-loading">
+        <input id="input-res-1" name="input-res-1[]" type="file" multiple>
+    </div>
+    
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#input-res-1").fileinput({
+            uploadUrl: "/site/test-upload",
+            enableResumableUpload: true,
+            initialPreviewAsData: true,
+            maxFileCount: 5,
+            theme: 'fas',
+            deleteUrl: '/site/file-delete',
+            fileActionSettings: {
+                showZoom: function(config) {
+                    if (config.type === 'pdf' || config.type === 'image') {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+</html>

@@ -1,0 +1,109 @@
+<%- include('partials/header.ejs') %>
+
+  <body>
+    <%- include('partials/navbar.ejs') %>
+      <!-- end hero area -->
+
+      <!-- shop section -->
+
+      <section class="shop_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              Produtos Muri
+            </h2>
+          </div>
+
+
+
+          <form action="/Produtos" method="get">
+            <div style="max-width: 80%;" class="input-group mb-3 ">
+              <input name="produto" type="text" class="form-control" placeholder="Produto nome " aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
+              </div>
+            </div>
+
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="flexCheckDefault" value="1">
+              <label class="form-check-label" for="flexCheckDefault">
+                Ponteiros
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="flexCheckChecked" value="2" checked>
+              <label class="form-check-label" for="flexCheckChecked">
+                PÉS 3D
+              </label>
+            </div>
+
+
+          </form>
+          <hr>
+          <div class="row">
+            <%if(produtos.length  == 0){%>
+              <div class="alert alert-dark" role="alert">
+                Nenhuma correspondecia a essa pesquisa :(
+              </div>
+            <%} %>
+            <% produtos.forEach((produto)=>{ %>
+
+
+              <%- include("partials/wpp.ejs") %>
+
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <div class="box">
+                    <a href="/Produto/<%= produto.id %> ">
+                      <div class="img-box">
+                        <img width="340px" src="/img/<%= produto.img %> " alt="">
+                      </div>
+                      <div class="detail-box">
+                        <h6>
+                          Modelo <%= produto.nome %>
+                        </h6>
+                        <h6>
+
+                          <span>
+                            R$ <%= produto.price %>
+                          </span>
+                        </h6>
+                      </div>
+                      <div class="new">
+                        <span>
+                          Novo
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <%}) %>
+
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- end shop section -->
+
+      <!-- info section -->
+
+      <%- include('partials/footer.ejs') %>
+
+        <!-- end info section -->
+
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+        </script>
+        <script src="js/custom.js"></script>
+
+  </body>
+  <%- include("partials/wpp.ejs") %>
+
+    </html>

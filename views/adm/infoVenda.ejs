@@ -1,0 +1,56 @@
+<%- include("../partials/header.ejs") %>
+
+    <body>
+        <%- include("../partials/admbar.ejs") %>
+            <div style="background-color: rgba(255, 255, 255, 0.589);" class="container">
+                <center class="mt-5">
+                    <h4>Informações  venda <%= venda.id%></h4>
+                    <hr>
+                    <ul class="list-group">
+                        <label for=""><b>Usuário</b></label>
+                        <li class="list-group-item"><%= user.nome%></li>
+                        <label for=""><b>Usuário Email</b></label>
+                        <li class="list-group-item"><%= user.email%></li>
+                        <label for="" class="mt-4"><b>Descrição da venda</b></label>
+                        <li class="list-group-item"><%= venda.desc%></li>
+                        <label for="" class="mt-4"><b>Status Pagamento</b></label>
+                        <%if (venda.status =="A"){%>
+                            <li class="list-group-item">Aguardando pagamento</li>
+                        <%}else if(venda.status =="P"){%>
+                            
+                            <li class="list-group-item">Pago</li>
+                        
+                        <%}%>
+                        <label for="" class="mt-4"><b>Valor compra</b></label>
+                        
+                        <li class="list-group-item">R$<%= venda.valor%></li>
+                        <label for="" class="mt-4"><b>Data da compra</b></label>
+
+                        <li class="list-group-item">Data <%=  `${venda.createdAt.getDate()}/${venda.createdAt.getMonth()+1}/${venda.createdAt.getFullYear()} ${venda.createdAt.getHours()}:${venda.createdAt.getMinutes()}`   
+                            %></li>
+                            <label for="" class="mt-4"><b>Endereço </b></label>
+                        
+                        <li class="list-group-item"><%=local.rua%>  <%= venda.endereco  %>  <%=local.city%></li>
+                      </ul>
+                    <hr>
+                    <%if(venda.status =="P"){%>
+                        <form action="/adm/finalizar/<%= venda.id%>" method="POST">
+                            <button class="btn btn-success">Entregar</button>
+                        </form>
+                        
+                        <%}%>
+                      <div style="margin-bottom: 15%;">
+                         
+                      </div>
+                </center>
+               
+            </div>
+
+
+            <%- include('../partials/footer.ejs') %> 
+
+    </body>
+    <%- include('../partials/scripts.ejs') %> 
+
+
+    </html>
